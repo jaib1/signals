@@ -1,6 +1,8 @@
 classdef StructRef < handle
-  %UNTITLED2 Summary of this class goes here
-  %   Detailed explanation goes here
+  %STRUCTREF Container for subassigning and referencing signals
+  %  Container class for holding groups of signals. 
+  %
+  %  See also SIG.REGISTRY, AUDSTEREAM.REGISTRY 
   
   properties
     Name = ''
@@ -51,6 +53,9 @@ classdef StructRef < handle
     end
     
     function value = entryAdded(this, name, value)
+    % ENTRYADDED Assigns an entry to Entries
+    %   Allows an inputs to be processed before assignent to Entries.
+    %   This function is intended to be overloaded by subclasses.
 %       fprintf('entry %s:%s added\n', name, toStr(value));
     end
   end
